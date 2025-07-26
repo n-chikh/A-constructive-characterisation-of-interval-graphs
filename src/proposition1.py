@@ -1,15 +1,15 @@
 '''Implementation of Proposition 1'''
 
 
-''' This first function creates the N-construction corresponding to some
-    dominance list, 
-i.e. the number of vertices of its corresponding graph.
+''' This first function implements the N-construction that constructs the
+so-called N-constructions, that are constructed interval graphs (that are not non
+isomorphic)
 '''
 import networkx as nx
 import matplotlib.pyplot as plt
 def N_graphe(ld):
-    '''Input: a dominance list
-       Output: a networkx's graph'''
+    '''Input: the dominance list of a constructed interval graph (N-construction) 
+       Output: the corresponding networkx's graph'''
     G = nx.Graph()
     ik = 1
     for j in ld:
@@ -46,6 +46,7 @@ def dominance_lists(n):
 
 
 '''Module execution
+   (generate an image of the corresponding N-construction)
 '''
 if __name__ == "__main__":
     import sys

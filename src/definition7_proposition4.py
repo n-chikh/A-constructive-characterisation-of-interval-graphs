@@ -1,4 +1,4 @@
-'''Implementation of Proposition 1'''
+'''Implementation of Definition 7 and Proposition 4'''
 
 
 '''The first function returns the (i-1,i)-transposition of a dominance list

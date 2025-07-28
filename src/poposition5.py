@@ -19,7 +19,7 @@ def chromatic_poly(ld):
     return p        
  
 '''Module execution
-   (generate an image of the corresponding N-construction)
+   (gives the chromatic polynomial)
 '''
 if __name__ == "__main__":
     import sys

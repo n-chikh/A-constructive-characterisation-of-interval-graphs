@@ -28,11 +28,12 @@ def check_itranspose(dl,tdl):
     itranspose = False
     if len(dl) == len(tdl):
         i = 1
+        #Sub-function returns True if, for an index i, tdl[i+1:] == dl[i+1:] 
         def tau_trans(i):
             if (tdl[i] == dl[i-1] + 1) and (tdl[i-1] == dl[i] - 1) and (tdl[i+1:] == dl[i+1:]):
                 return True
             else: return False
-            
+    #------------------------------------------------------------------------
         while (itranspose == False) and (i < len(dl)):
             if tau_trans(i) == True:
                 itranspose = True

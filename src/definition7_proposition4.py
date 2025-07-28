@@ -42,7 +42,8 @@ def check_itranspose(dl,tdl):
     
 
 '''Module execution
-   (generate an image of the corresponding N-construction)
+  (input: a dominance list and a index i,
+   output: its (i-1,i)-transpose)
 '''
 if __name__ == "__main__":
     import sys

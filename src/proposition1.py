@@ -7,7 +7,7 @@ isomorphic)
 '''
 import networkx as nx
 import matplotlib.pyplot as plt
-def N_graphe(ld):
+def N_construction(ld):
     '''Input: the dominance list of a constructed interval graph (N-construction) 
        Output: the corresponding networkx's graph'''
     G = nx.Graph()

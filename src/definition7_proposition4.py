@@ -40,7 +40,32 @@ def check_itranspose(dl,tdl):
             else:
                 i += 1
     return itranspose, (None if (itranspose == False) else i)
-    
+
+
+''' The third function check if two (i-1,i)-transposes are isomorphic
+'''   
+def iso_transpose(dl, tdl):
+    '''Input: two dominance lists
+       Output: "Not (i-1,i)-tranposes" if there is no (i-1,i)-transposition
+               True, if the (i-1,i)-tranposes are isomorphic; False elsewise
+    '''
+    #Sub-function that check isomorphism condition
+    def check_iso(d):
+        #nonlocal i
+        test = True
+        if (d[i-1], d[i]) != (d[i-1], d[i-1]+1):            
+            for k in range(i+1,len(d)):
+                if d[k] == k - i:
+                    test = False
+                    break
+        return test
+    #------------------------------------------------
+    if not check_itranspose(dl,tdl)[0]:
+        return 'Not (i-1,i)-tranposes'
+    else:
+        i = check_itranspose(dl,tdl)[1]
+        return check_iso(dl)
+
 
 '''Module execution
   (input: a dominance list and a index i,

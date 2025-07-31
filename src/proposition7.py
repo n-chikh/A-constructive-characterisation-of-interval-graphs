@@ -4,7 +4,6 @@
 '''This function implements Algorithm 1, which gives the permutation
    corresponding to a dominance list
 '''
-import sympy as sp
 def phi(d):
     dl = list(d)
     '''Input: a dominance list d.

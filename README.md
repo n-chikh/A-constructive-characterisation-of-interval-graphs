@@ -4,4 +4,5 @@ This repository contains Python modules accompanying a forthcoming paper titled 
 
 In that work, we propose an iterative procedure for constructing interval graphs. As a byproduct, we derived various results. The purpose of this repository is to provide computational implementations for testing and illustrating those results. 
 
-Each module in this repository corresponds to a specific definition, property or algorithm. The list below outlines this correspondence:
+Each module in this repository corresponds to a specific a definition or result. The list below outlines this correspondence:
+1. proposition3.py <--> Proposition 1.  

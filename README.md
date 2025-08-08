@@ -15,8 +15,8 @@ Each module in [main/src](https://github.com/n-chikh/A-constructive-characterisa
 
 | Module      | Definition/result | Description |
 | ----------- | ----------- | ----------- |
-| proposition1.py      | Proposition 1       | 1. The function `N_construction` construct an interval graph using its dominance list. <br> 2. `dominance_lists` generates a list of all dominance lists of lenght $n$ |
-| proposition3.py   | Proposition 3       | |
+| proposition1.py      | Proposition 1       | 1. The function `N_construction` construct an interval graph using its dominance list. <br> 2. `dominance_lists` generates a list of all dominance lists of lenght $n$. |
+| proposition3.py   | Proposition 3       | `nbr_cc` returns: the number of connected components of an interval graph; and the the index of the leftmost vertex in each connected component. |
 | definition7_proposition4.py   | Definition 7, Proposition 4       | |
 | proposition5.py   | Proposition 5       | |
 | corollary1_corollary2.py   | Corallary 1, Corollary 2       | |

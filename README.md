@@ -18,3 +18,7 @@ Each module in [main/src](https://github.com/n-chikh/A-constructive-characterisa
 | proposition1.py      | Proposition 1       |
 | proposition3.py   | Proposition 3       |
 | definition7_proposition4.py   | Definition 7, Proposition 4       |
+| proposition5.py   | Proposition 5       |
+| corollary1_corollary2.py   | Corallary 1, Corollary 2       |
+| proposition7.py   | Proposition 7       |
+| table2.py   | Table 2      |

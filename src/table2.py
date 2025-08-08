@@ -49,7 +49,7 @@ def iso_Nconstructions(n, m=None):
 '''The thrid function gives a list that contains the numbers $p_{n,m}$,
     for a fixed $n$ 
 '''
-def list_iso_Nconstructions(n):
+def list_iso_p(n):
     '''Input: the number of vertices n 
        Output: a list containing all $p_{n,m}$'''
     nbrs = [len(iso_Nconstructions(n, m=k)) for k in range(int(n*(n-1)/2)+1)]
@@ -93,4 +93,4 @@ def dominance_lists(n):
 if __name__ == "__main__":
     import sys
     inp = int(sys.argv[1])
-    print(list_iso_Nconstructions(inp))
+    print(list_iso_p(inp))

@@ -15,7 +15,7 @@ Each module in [main/src](https://github.com/n-chikh/A-constructive-characterisa
 
 | Module      | Definition/result | Description |
 | ----------- | ----------- | ----------- |
-| proposition1.py      | Proposition 1       | The function `N_construction` construct an interval graph using its dominance list |
+| proposition1.py      | Proposition 1       | : The function `N_construction` construct an interval graph using its dominance list. : `dominance_lists` generates a list of all dominance lists of lenght $n$ |
 | proposition3.py   | Proposition 3       | |
 | definition7_proposition4.py   | Definition 7, Proposition 4       | |
 | proposition5.py   | Proposition 5       | |

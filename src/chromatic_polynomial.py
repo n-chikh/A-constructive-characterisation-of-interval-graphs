@@ -1,4 +1,4 @@
-'''Implementation of Proposition 5'''
+'''Computation of chromatic polynomial of interval graphs, using dominance lists'''
 
 
 '''This function gives the chromatic polynomial of an N-construction

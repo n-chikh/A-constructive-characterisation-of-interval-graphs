@@ -1,5 +1,4 @@
-'''Implementation of Proposition 3'''
-
+'''Implementation of the sufficient and necessary condition of connectedness'''
 
 
 ''' This function check the necessary condition for a given index 
@@ -13,24 +12,32 @@ def condition_dec(ld, i):
     ldt = list(ld[i:])
     n = len(ldt)
     exh = 0 
-    cc = 0
+    cc = False
     isolating_vertex = 0   
     if (i !=0):
         for j in range(n):
             if ldt[j]<=j:
                 exh += 1
-            if exh==n:
-                cc += 1
-                isolating_vertex = i+1
+        if exh==n:
+            cc = True
+            isolating_vertex = i+1
     else:
         for j in range(1,n):
             if ldt[j]<j:
                 exh += 1
-            if exh==n-1:
-                isolating_vertex = i+1
+        if exh==n-1:
+            cc = True
+            isolating_vertex = i+1
     return cc, isolating_vertex
     
-    
+''' This function gives a list of the first vertex of every connected component.
+'''
+def indices_cc(ld):
+    composantes = [0] + [ condition_dec(ld, k)[1] 
+                        for k in range(len(ld)) 
+                        if condition_dec(ld, k)[0] == True ]
+    return composantes
+
     
 ''' The main function
 '''    

@@ -1,4 +1,4 @@
-'''Implementation of Proposition 1'''
+'''Implementation of the N-procedure'''
 
 
 ''' This first function implements the N-construction that constructs the
@@ -7,6 +7,10 @@ isomorphic)
 '''
 import networkx as nx
 import matplotlib.pyplot as plt
+
+from src.connected_components import *
+
+
 def N_construction(ld):
     '''Input: the dominance list of a constructed interval graph (N-construction) 
        Output: the corresponding networkx's graph'''
@@ -22,9 +26,9 @@ def N_construction(ld):
 
 
 ''' The second function generates every dominance list of some lenght, 
-i.e. the number of vertices of its corresponding graph.
+i.e. the number of vertices of its corresponding N-construction.
 '''
-def dominance_lists(n):
+def dominance_lists(n, cc=False):
     '''Input: the number of vertices n
        Output: a list that stores the dominance list of every 
                constructed interval graph (N-construction) with n vertices'''
@@ -40,9 +44,40 @@ def dominance_lists(n):
                 gd[i]=j
                 gen_dominance_list(n,i+1)
         else:
-            dom_list.append(list(gd))
-    gen_dominance_list(N)
+            if cc == True: 
+                if indices_cc(gd) == [0]:
+                    dom_list.append(list(gd))
+            else:
+                dom_list.append(list(gd))
+    gen_dominance_list(n)
     return dom_list
+
+
+'''The third function generates a list containing all the N-constructions
+   $G_{n}$ or $G_{n,m}$ 
+'''
+def gen_Nconstructions(n, L=None, m=None, c = False):
+    '''Input: the number of vertices n and (optionnaly) the number of edges m.
+       Output: a list that contains all the N-constructions $G_{n}$
+               or (if m is given) $G_{n,m}$'''
+    dom_list = []
+    if L == None:
+        dom = dominance_lists(n, cc=c)
+    else:
+        dom = L
+    g = []
+    if m==None:
+        for d in dom:
+            G = N_construction(d)
+            g.append(G)
+    else:
+        for d in dom:
+            if sum(d)==m:
+                G = N_construction(d)    
+                g.append(G)           
+    return g    
+
+
 
 
 '''Module execution

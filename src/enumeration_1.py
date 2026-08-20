@@ -1,4 +1,4 @@
-'''Implementation of Corollary 1 & Corollary 2'''
+'''Calculation of the number of the number of N-constructions and threshold graphs'''
 
 
 '''This function counts the number of N-constructions 

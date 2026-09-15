@@ -1,4 +1,4 @@
-# A constructive Characterisation of Interval Graphs
+# A Constructive Characterisation of Interval Graphs
 
 This repository stores the Python modules accompanying a forthcoming paper titled *"A constructive characterisation of interval graphs"*.
 

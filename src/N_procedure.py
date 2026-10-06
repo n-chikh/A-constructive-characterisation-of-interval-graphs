@@ -1,9 +1,10 @@
-'''Implementation of the N-procedure'''
+'''Implementation of the N-procedure.
 
+Functions:
+    N_construction() -- Constructs the N-construction corresponding to a dominance list.
+    dominance_lists() -- Generates all the dominances lists of a given lenght.
+    gen_Nconstructions -- Generates all the N-constructions of a given order.
 
-''' This first function implements the N-construction that constructs the
-so-called N-constructions, that are constructed interval graphs (that are not non
-isomorphic)
 '''
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -12,8 +13,12 @@ from src.connected_components import *
 
 
 def N_construction(ld):
-    '''Input: the dominance list of a constructed interval graph (N-construction) 
-       Output: the corresponding networkx's graph'''
+    '''
+    Args: 
+        ld: Dominance list given as a list or array.
+    Returns: 
+        N-construction of ld as a networkx graph. 
+    '''
     G = nx.Graph()
     ik = 1
     for j in ld:
@@ -25,19 +30,17 @@ def N_construction(ld):
     return G
 
 
-''' The second function generates every dominance list of some lenght, 
-i.e. the number of vertices of its corresponding N-construction.
-'''
 def dominance_lists(n, cc=False):
-    '''Input: the number of vertices n
-       Output: a list that stores the dominance list of every 
-               constructed interval graph (N-construction) with n vertices'''
+     '''
+    Args: 
+        n: An integer respresing the number of vertices.
+    Returns: 
+        List of all dominance lists with lenght n. 
+    '''
     dom_list = []
     gd = [0 for k in range(n)]
-    
-    '''That is the inner function that actually generates the dominance list
-    The encapsulating function is meant to return the dominance lists'''
     def gen_dominance_list(n,init=1):
+    '''Inner function that actually generates the graphs'''
         i = init
         if init<n:
             for j in range(i+1):
@@ -53,13 +56,15 @@ def dominance_lists(n, cc=False):
     return dom_list
 
 
-'''The third function generates a list containing all the N-constructions
-   $G_{n}$ or $G_{n,m}$ 
-'''
 def gen_Nconstructions(n, L=None, m=None, c = False):
-    '''Input: the number of vertices n and (optionnaly) the number of edges m.
-       Output: a list that contains all the N-constructions $G_{n}$
-               or (if m is given) $G_{n,m}$'''
+        '''
+    Args: 
+        n: Number of vertices of the graphs.
+        L (optional): A list or array containing dominance lists.
+        m (optional) Number of edges of the graphs
+    Returns: 
+        List of all N-constructions with n vertices. 
+    '''
     dom_list = []
     if L == None:
         dom = dominance_lists(n, cc=c)

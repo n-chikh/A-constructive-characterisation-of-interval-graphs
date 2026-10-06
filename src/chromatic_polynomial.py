@@ -1,10 +1,18 @@
-'''Computation of chromatic polynomial of interval graphs, using dominance lists'''
+'''Computation of chromatic polynomial of an N-construction
 
-
-'''This function gives the chromatic polynomial of an N-construction
+Functions:
+    chromatic_poly() -- Compute the chromatic polynomial given a dominance list
 '''
+
 import sympy as sp
+
 def chromatic_poly(ld):
+    '''
+    Args: 
+        ld: Dominance list given as a list or array.
+    Returns: 
+        The chromatic polynomial of the corresponding N-construction. 
+    '''
     x = sp.Symbol('λ')
     p = sp.Function("P")(x)
     p = 1    #initialisation

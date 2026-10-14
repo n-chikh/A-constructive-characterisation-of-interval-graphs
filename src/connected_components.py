@@ -1,14 +1,19 @@
-'''Implementation of the sufficient and necessary condition of connectedness'''
+'''Implementation of the sufficient and necessary condition of connectedness
 
-
-''' This function check the necessary condition for a given index 
-    It is meant to be used in the main function.
+Functions:
+    condition_dec() -- For a given vertex's index i, return TRUE if the successive vertex is
+    the first vertex of some connected compenent.
 '''
 def condition_dec(ld, i):
-    '''Input: Dominance list "ld" and the index "i+1".
-       Output: cc:=1 if the necessary condition holds.
-               isolating_vertex:= the index i+1 of the first vertex of the connected component being identified.
      '''
+    Args: 
+        ld: Dominance list given as a list or array.
+        i: A vertex's index.
+    Returns: 
+        Return the ordered pair (True/False, i+1); True if the vertex v_{i} disconnects
+        the graph, and False otherwise.
+    '''
+
     ldt = list(ld[i:])
     n = len(ldt)
     exh = 0 

@@ -4,16 +4,16 @@ Functions:
     condition_dec() -- For a given vertex's index i, return TRUE if the successive vertex is
     the first vertex of some connected compenent.
 '''
+
 def condition_dec(ld, i):
      '''
     Args: 
         ld: Dominance list given as a list or array.
         i: A vertex's index.
     Returns: 
-        Return the ordered pair (True/False, i+1); True if the vertex v_{i} disconnects
+        An ordered pair (True/False, i+1); True if the vertex v_{i} disconnects
         the graph, and False otherwise.
     '''
-
     ldt = list(ld[i:])
     n = len(ldt)
     exh = 0 
@@ -35,22 +35,28 @@ def condition_dec(ld, i):
             isolating_vertex = i+1
     return cc, isolating_vertex
     
-''' This function gives a list of the first vertex of every connected component.
-'''
+
 def indices_cc(ld):
+    ''' Args:
+            ld: dominance list given as a list or array.
+        Returns:
+            A list of the indices of vertexes that disconnect the graph, i.e. which are 
+            the last vertex of every connected component.
+    '''
     composantes = [0] + [ condition_dec(ld, k)[1] 
                         for k in range(len(ld)) 
                         if condition_dec(ld, k)[0] == True ]
     return composantes
 
-    
-''' The main function
-'''    
+
 def nbr_cc(LD):
-    '''Input: Dominance list "ld".
-       Output: components counts the number of connected components.
-               listv is a list of indices refering to the leading vertices of each connected component
-    '''    
+    '''
+    Args: 
+        LD: Dominance list given as a list or array.
+    Returns: 
+        An ordered pair which contains the number of connected components and a list of the indices
+        of the leading vertices of each connected component.
+    '''
     components = 1
     listv = []
     for i in range(len(LD)):

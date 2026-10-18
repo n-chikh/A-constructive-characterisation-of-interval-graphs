@@ -1,17 +1,24 @@
-'''Calculation of non isomorphic interval graphs in Concluding remarks'''
+'''Calculation of non isomorphic interval graphs discussed in the Concluding remarks
 
+    Functions:
+    iso_Nconstructions() -- Extract interval graphs from a list of N-constructions with n vertices
+    and optionnally m edges; or from a any personalised list of N-constructions
+'''
 
 import networkx as nx
 from src.N_procedure import *
 
 
-'''The second function generates a list containing every (non isomorphic) 
-    interval graph $G_{n}$ or $G_{n,m}$ 
-'''
 def iso_Nconstructions(n, L=None, m=None, C=False):
-    '''Input: the number of vertices n and the number of edges m (optional).
-       Output: a list that contains all interval graphs $G_{n}$
-               or (if m is given) $G_{n,m}$'''    
+    '''
+    Args: 
+        n: Number of vertices.
+        m: Number of edges (optional).
+        L: A list of N-constuctrions (optional); if None the list of all N-constructions
+        with n vertices (and optionally m edges) is used.
+    Returns: 
+        A list of non isomorphic interval graphs of n vertices and, if precised, m edges.
+    '''
     if L == None:
         L = gen_Nconstructions(n, m, c=C)
         
@@ -28,12 +35,14 @@ def iso_Nconstructions(n, L=None, m=None, C=False):
     return L_distinct
     
 
-'''This function gives a list that contains the numbers $p_{n,m}$,
-    for a fixed $n$ 
-'''
 def list_iso_p(n):
-    '''Input: the number of vertices n 
-       Output: a list containing all $p_{n,m}$'''
+    '''
+    Args: 
+        n: Number of vertices.
+    Returns: 
+        A list of the numbers interval graphs with n vertices and m edges, m spanning from
+        0 to n(n-1)/2.
+    '''
     nbrs = [len(iso_Nconstructions(n, m=k)) for k in range(int(n*(n-1)/2)+1)]
     return nbrs
 

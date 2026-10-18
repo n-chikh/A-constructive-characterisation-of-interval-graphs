@@ -1,12 +1,20 @@
-'''Calculation of the number of the number of N-constructions and threshold graphs'''
+'''Computation of the number of the number of N-constructions and threshold graphs
 
-
-'''This function counts the number of N-constructions 
-   with n vertices and m edges
+Functions:
+   p() -- Given (n,m), computes the number of N-constructions with n vertices and m edges.
+   t() -- Given (n,m), computes the numbers of threshold graphs (a threshold graph is just
+   an N-construction which dominance list's entries d_i meets the restriction d_i = 0 or i-1).
 '''
 from functools import lru_cache
 @lru_cache(maxsize = None)
 def p(n,m):
+    '''
+    Args: 
+        n: The number of vertices.
+        i: The number of edges.
+    Returns: 
+        The number of N-constructions with with n vertices and m edges.
+    '''
     part = 0
     if (m<0) or (n<=0):
         return 0
@@ -18,12 +26,16 @@ def p(n,m):
         return part
  
 
-'''This function counts the number of threshold graphs
-   with n vertices and m edges
-'''
 from functools import lru_cache
 @lru_cache(maxsize = None)
 def t(n,m):
+    '''
+    Args: 
+        n: The number of vertices.
+        i: The number of edges.
+    Returns: 
+        The number of threshold graphs with with n vertices and m edges.
+    '''
     if (m<0) or (n<=0):
         return 0
     elif (m==0):

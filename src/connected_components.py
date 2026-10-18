@@ -1,7 +1,7 @@
 '''Implementation of the sufficient and necessary condition of connectedness
 
 Functions:
-    condition_dec() -- For a given vertex's index i, return TRUE if the successive vertex is
+    condition_dec() -- For a given vertex's index i, returns TRUE if the successive vertex is
     the first vertex of some connected compenent.
 '''
 
